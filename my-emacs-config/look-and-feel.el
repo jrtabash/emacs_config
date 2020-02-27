@@ -104,6 +104,8 @@
 
 (setq auto-mode-alist (cons '("\\.ish" . common-lisp-mode) auto-mode-alist))
 
+(setq auto-mode-alist (cons '("\\.m" . octave-mode) auto-mode-alist))
+
 ;; ------------------------------------------------------------------------
 ;; Diff
 (setq ediff-split-window-function 'split-window-horizontally)
