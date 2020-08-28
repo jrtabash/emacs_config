@@ -159,3 +159,6 @@
 
 ;; (when (functionp #'global-hl-line-mode)
 ;;   (global-hl-line-mode 1))
+
+;; ------------------------------------------------------------------------
+(setq visible-bell 1)
