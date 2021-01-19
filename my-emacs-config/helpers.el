@@ -45,7 +45,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Get cpp source directory
 (defun get-cppDirectory ()
-  "~/Development/cpp/")
+  ;; "~/Development/cpp/"
+  "~/github/ishlang/")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Insert TODO
