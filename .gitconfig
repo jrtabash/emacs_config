@@ -1,0 +1,15 @@
+[user]
+	email = <email>
+	name = <name>
+[core]
+	editor = emacs -nw
+
+[alias]
+        loggraph = log --graph --decorate --all
+        logcommit = log origin/master..
+        logmain = log origin/main..
+        showcommits = show origin/master..
+        showmain = show origin/main..
+
+[credential]
+	helper = cache --timeout=3600
