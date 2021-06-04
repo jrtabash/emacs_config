@@ -93,8 +93,8 @@
 (global-set-key "\M-2" #'isearch-cancel)
 (global-set-key "\M-3" #'isearch-forward-symbol-at-point)
 
-(global-set-key (kbd "C-x F") #'fiplr-find-file)
-(global-set-key (kbd "C-x f") #'fiplr-find-file-in-cpp)
+(global-set-key (kbd "C-x F") #'helm-projectile-find-file-dwim)
+(global-set-key (kbd "C-x f") #'helm-projectile-find-file-dwim)
 (global-set-key (kbd "C-x =") #'my-enlarge-window)
 (global-set-key (kbd "C-x -") #'my-shrink-window)
 (global-set-key (kbd "C-x ]") #'my-enlarge-window-horizontally)

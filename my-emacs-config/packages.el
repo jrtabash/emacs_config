@@ -36,3 +36,7 @@
 (helm-autoresize-mode 1)
 (setq helm-autoresize-max-height 20)
 (setq helm-autoresize-min-height 10)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Tramp
+(require 'tramp)
