@@ -10,7 +10,7 @@
 ;;     (load-theme 'wombat t)))
 ;;labburn grandshell flatui-dark kaolin alect-black-alt gotham tango-dark wombat adwaita
 
-(load-theme 'srcery t)
+(load-theme 'tango-dark t)
 
 ;; (if (display-graphic-p)
 ;;     (progn
