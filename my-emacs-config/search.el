@@ -2,7 +2,7 @@
 ;; Grep and grep path and command
 (defvar my-use-specials t)
 
-(defun my-grep-path () (get-cppDirectory))
+(defun my-grep-path () (get-srcDirectory))
 
 (defun set-use-specials () (interactive) (setq my-use-specials t))
 (defun unset-use-specials () (interactive) (setq my-use-specials nil))

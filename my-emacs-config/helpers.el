@@ -43,10 +43,9 @@
     (or (string= first "*") (string= first " "))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Get cpp source directory
-(defun get-cppDirectory ()
-  ;; "~/Development/cpp/"
-  "~/github/ishlang/")
+;; Get source directory
+(defun get-srcDirectory ()
+  "~/github/")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Insert TODO

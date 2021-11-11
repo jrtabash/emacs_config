@@ -44,7 +44,7 @@
 ;; FIPLR find file in cpp
 (defun fiplr-find-file-in-cpp ()
   (interactive)
-  (fiplr-find-file-in-directory (get-cppDirectory) fiplr-ignored-globs))
+  (fiplr-find-file-in-directory (get-srcDirectory) fiplr-ignored-globs))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; TODO
@@ -73,13 +73,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun my-compile ()
   (interactive)
-  (compile (format "cd %sishlang/src/ && make" (get-cppDirectory))))
+  (compile (format "cd %sishlang/src/ && make" (get-srcDirectory))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun my-unit-tests ()
   (interactive)
   (let ((testOptions (read-string "Test Options: "))
-        (build (format "%sishlang/src/build" (get-cppDirectory))))
+        (build (format "%sishlang/src/build" (get-srcDirectory))))
     (async-shell-command
      (format "export LD_LIBRARY_PATH=%s; %s/ishlang_unit_test %s"
              build
@@ -97,7 +97,7 @@
     (forward-char)
     ;; (down-list)
     (let ((testName (grab-word))
-          (build (format "%sishlang/src/build" (get-cppDirectory))))
+          (build (format "%sishlang/src/build" (get-srcDirectory))))
       (unless (word-empty-p testName)
         (shell-command
          (format "export LD_LIBRARY_PATH=%s; %s/ishlang_unit_test -v -n %s"
