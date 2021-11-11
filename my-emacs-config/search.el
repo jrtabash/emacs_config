@@ -52,7 +52,7 @@
 
 (defun find-TODOJT ()
   (interactive)
-  (let ((grep-command (format "%s %s-n -r %s* -e \"TODO:JT\"" (my-grep-bin) (my-grep-specials) (my-grep-path))))
+  (let ((grep-command (format "%s %s-n -r %s* -e \"TODO.JT\"" (my-grep-bin) (my-grep-specials) (my-grep-path))))
     (grep grep-command)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
