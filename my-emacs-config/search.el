@@ -5,9 +5,6 @@
 (defun my-grep-path () (get-srcDirectory))
 (defun my-grep-bin () "grep")
 
-(defun set-use-specials () (interactive) (setq my-use-specials t))
-(defun unset-use-specials () (interactive) (setq my-use-specials nil))
-
 (defun my-grep-specials () (if my-use-specials "--exclude-dir=.svn --include=*.* -I " ""))
 (defun my-grep-command () (format "%s %s-n -r %s* -e " (my-grep-bin) (my-grep-specials) (my-grep-path)))
 
