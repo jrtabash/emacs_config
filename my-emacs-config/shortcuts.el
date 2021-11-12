@@ -27,7 +27,7 @@
 (add-a-shortcut "d" `add-TODOJT)              ;; Add a "TODO:JT" comment
 ;; D
 (add-a-shortcut "e" `mark-sexp)               ;; Select sexp
-(add-a-shortcut "E" `my-find-curFile)         ;; Search for text in current buffer/file (text = current position to end of word)
+;; E
 (add-a-shortcut "f" `my-find)                 ;; Search for text (text = current position to end of word)
 (add-a-shortcut "F" `my-find-curDir)          ;; Search for text in current buffer directory (text = current position to end of word)
 (add-a-shortcut "g" `my-grep)                 ;; Use my grep (cpp path)

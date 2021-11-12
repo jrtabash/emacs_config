@@ -19,7 +19,7 @@
 (defun my-find ()
   (interactive)
   (let* ((pattern (grab-word))
-         (grep-command (format "%s %s-n -r %s* -e \"%s\"" (my-grep-bin) (my-grep-specials) (my-grep-path) pattern)))
+         (grep-command (format "%s \"%s\"" (my-grep-command) pattern)))
     (unless (word-empty-p pattern)
       (grep grep-command))))
 
@@ -27,29 +27,21 @@
   (interactive)
   (let* ((pattern (grab-word))
          (bufDir (file-name-directory (buffer-file-name (current-buffer))))
-         (grep-command (format "%s %s-n %s* -e \"%s\"" (my-grep-bin) (my-grep-specials) bufDir pattern)))
-    (unless (word-empty-p pattern)
-      (grep grep-command))))
-
-(defun my-find-curFile ()
-  (interactive)
-  (let* ((pattern (grab-word))
-         (filename (buffer-file-name (current-buffer)))
-         (grep-command (format "%s %s-n %s -e \"%s\"" (my-grep-bin) (my-grep-specials) filename pattern)))
+         (grep-command (format "%s \"%s\"" (my-grep-command) bufDir pattern)))
     (unless (word-empty-p pattern)
       (grep grep-command))))
 
 (defun find-cppType ()
   (interactive)
   (let* ((pattern (grab-word))
-         (grep-command (format "%s %s-n -r %s* -e \"class \\+%s\\|struct \\+%s\\|namespace \\+%s\\|using \\+%s\\|typedef.\\+%s\"" 
-                               (my-grep-bin) (my-grep-specials) (my-grep-path) pattern pattern pattern pattern pattern)))
+         (grep-command (format "%s \"class \\+%s\\|struct \\+%s\\|namespace \\+%s\\|using \\+%s\\|typedef.\\+%s\""
+                               (my-grep-command) pattern pattern pattern pattern pattern)))
     (unless (word-empty-p pattern)
       (grep grep-command))))
 
 (defun find-TODOJT ()
   (interactive)
-  (let ((grep-command (format "%s %s-n -r %s* -e \"TODO.JT\"" (my-grep-bin) (my-grep-specials) (my-grep-path))))
+  (let ((grep-command (format "%s \"TODO.JT\"" (my-grep-command))))
     (grep grep-command)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
