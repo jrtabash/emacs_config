@@ -6,7 +6,8 @@
 (defun my-grep-bin () "grep")
 
 (defun my-grep-specials () (if my-use-specials "--exclude-dir=.svn --include=*.* -I " ""))
-(defun my-grep-command () (format "%s %s-n -r %s* -e " (my-grep-bin) (my-grep-specials) (my-grep-path)))
+(defun my-grep-command-path (path) (format "%s %s-n -r %s* -e " (my-grep-bin) (my-grep-specials) path))
+(defun my-grep-command () (my-grep-command-path (my-grep-path)))
 
 (setq grep-command (my-grep-command))
 
@@ -27,7 +28,7 @@
   (interactive)
   (let* ((pattern (grab-word))
          (bufDir (file-name-directory (buffer-file-name (current-buffer))))
-         (grep-command (format "%s \"%s\"" (my-grep-command) bufDir pattern)))
+         (grep-command (format "%s \"%s\"" (my-grep-command-path bufDir) pattern)))
     (unless (word-empty-p pattern)
       (grep grep-command))))
 
