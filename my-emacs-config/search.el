@@ -1,12 +1,20 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Grep and grep path and command
-(defvar my-use-specials t)
 
 (defun my-grep-path () (get-srcDirectory))
-(defun my-grep-bin () "grep")
 
-(defun my-grep-specials () (if my-use-specials "--exclude-dir=.svn --include=*.* -I " ""))
-(defun my-grep-command-path (path) (format "%s %s-n -r %s* -e " (my-grep-bin) (my-grep-specials) path))
+;; grep
+;; (defun my-grep-bin () "grep")
+;; (defun my-grep-specials () "--exclude-dir=.svn --include=*.* -I ")
+;; (defun my-grep-command-path (path) (format "%s %s-n -r %s* -e " (my-grep-bin) (my-grep-specials) path))
+;; (defun cpp-type-expr () "%s \"class \\+%s\\|struct \\+%s\\|namespace \\+%s\\|using \\+%s\\|typedef.\\+%s\"")
+
+;; ripgrep
+(defun my-grep-bin () "rg")
+(defun my-grep-specials () "-H --no-heading --color never ")
+(defun my-grep-command-path (path) (format "%s %s-n %s -e " (my-grep-bin) (my-grep-specials) path))
+(defun cpp-type-expr () "%s \"class +%s|struct +%s|namespace +%s|using +%s|typedef.+%s\"")
+
 (defun my-grep-command () (my-grep-command-path (my-grep-path)))
 
 (setq grep-command (my-grep-command))
@@ -35,8 +43,7 @@
 (defun find-cppType ()
   (interactive)
   (let* ((pattern (grab-word))
-         (grep-command (format "%s \"class \\+%s\\|struct \\+%s\\|namespace \\+%s\\|using \\+%s\\|typedef.\\+%s\""
-                               (my-grep-command) pattern pattern pattern pattern pattern)))
+         (grep-command (format (cpp-type-expr) (my-grep-command) pattern pattern pattern pattern pattern)))
     (unless (word-empty-p pattern)
       (grep grep-command))))
 
