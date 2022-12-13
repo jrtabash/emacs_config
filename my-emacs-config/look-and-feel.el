@@ -154,11 +154,14 @@
 (when (functionp #'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-;; (when (functionp #'global-linum-mode)
-;;   (global-linum-mode 1))
+(when (functionp #'global-linum-mode)
+  (global-linum-mode 1)
+  (setq linum-format "%d "))
 
-;; (when (functionp #'global-hl-line-mode)
-;;   (global-hl-line-mode 1))
+(when (functionp #'global-hl-line-mode)
+  (global-hl-line-mode 1)
+  (set-face-background 'hl-line "black")
+  (set-face-foreground 'hl-line "white"))
 
 ;; ------------------------------------------------------------------------
 (setq visible-bell 1)
