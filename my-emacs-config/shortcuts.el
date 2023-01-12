@@ -71,9 +71,9 @@
 (add-a-shortcut "z" `my-copy)                 ;; Copy text from current position to end of word
 ;; Z
 (add-a-shortcut "`" `magit-diff-working-tree) ;; Version control diff working tree
-(add-a-shortcut "1" `vc-diff)                 ;; Version control diff current file/buffer
+(add-a-shortcut "1" `magit-diff-buffer-file)  ;; Version control diff current file/buffer
 (add-a-shortcut "2" `vc-print-log)            ;; Version control log current file/buffer
-(add-a-shortcut "3" `magit-blame)             ;; Version control blame current file/buffer
+(add-a-shortcut "3" `vc-annotate)             ;; Version control blame current file/buffer
 (add-a-shortcut "4" `magit-status)            ;; Version control status
 (add-a-shortcut "5" `magit-show-commit)       ;; Version control show commit
 ;; 6
