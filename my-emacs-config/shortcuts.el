@@ -75,7 +75,7 @@
 (add-a-shortcut "2" `vc-print-log)            ;; Version control log current file/buffer
 (add-a-shortcut "3" `magit-blame)             ;; Version control blame current file/buffer
 (add-a-shortcut "4" `magit-status)            ;; Version control status
-;; 5
+(add-a-shortcut "5" `magit-show-commit)       ;; Version control show commit
 ;; 6
 ;; 7
 ;; 8
