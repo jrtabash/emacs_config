@@ -106,6 +106,8 @@
 
 (setq auto-mode-alist (cons '("\\.m" . octave-mode) auto-mode-alist))
 
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
 ;; ------------------------------------------------------------------------
 ;; Diff
 (setq ediff-split-window-function 'split-window-horizontally)
